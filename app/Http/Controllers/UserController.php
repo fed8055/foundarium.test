@@ -2,35 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\ServiceCars;
+use App\Services\ServiceUser;
 use Illuminate\Http\Request;
 
 /**
  * @OA\Schema(
- *     title="CarController",
- *     description="CarController",
+ *     title="UserController",
+ *     description="UserController",
  *     @OA\Xml(
- *         name="CarController"
+ *         name="UserController"
  *     )
  * )
  */
-class CarController extends Controller
+
+class UserController extends Controller
 {
-    private $serviceCars;
+    private $serviceUser;
 
     public function __construct(){
-        $this->serviceCars = new ServiceCars();
+        $this->serviceUser = new ServiceUser();
     }
 
     /**
      * @OA\Post(
-     ** path="/api/cars/add",
+     ** path="/api/users/add",
      *   tags={"add"},
      *   summary="add",
      *   operationId="add",
      *
      *  @OA\Parameter(
-     *      name="brand",
+     *      name="name",
      *      in="query",
      *      required=true,
      *      @OA\Schema(
@@ -38,7 +39,7 @@ class CarController extends Controller
      *      )
      *   ),
      *   @OA\Parameter(
-     *      name="model",
+     *      name="email",
      *      in="query",
      *      required=true,
      *      @OA\Schema(
@@ -46,7 +47,7 @@ class CarController extends Controller
      *      )
      *   ),
      *   @OA\Parameter(
-     *      name="reg_num",
+     *      name="password",
      *      in="query",
      *      required=true,
      *      @OA\Schema(
@@ -67,12 +68,12 @@ class CarController extends Controller
      * @return bool
      */
     public function create(Request $request){
-        return $this->serviceCars->create($request);
+        return $this->serviceUser->create($request);
     }
 
     /**
      * @OA\Get(
-     ** path="/api/cars/get",
+     ** path="/api/users/get",
      *   tags={"getById"},
      *   summary="getById",
      *   operationId="getById",
@@ -99,12 +100,12 @@ class CarController extends Controller
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function getById(Request $request){
-        return $this->serviceCars->getById($request);
+        return $this->serviceUser->getById($request);
     }
 
     /**
      * @OA\Get(
-     ** path="/api/cars/getAll",
+     ** path="/api/users/getAll",
      *   tags={"getList"},
      *   summary="getList",
      *   operationId="getList",
@@ -119,21 +120,21 @@ class CarController extends Controller
      *)
      **/
     /**
-     * @return \App\Models\Car[]|\Illuminate\Database\Eloquent\Collection
+     * @return \App\Models\User[]|\Illuminate\Database\Eloquent\Collection
      */
     public function getList(){
-        return $this->serviceCars->getList();
+        return $this->serviceUser->getList();
     }
 
     /**
      * @OA\Post(
-     ** path="/api/cars/update",
+     ** path="/api/users/update",
      *   tags={"update"},
      *   summary="update",
      *   operationId="update",
      *
      *  @OA\Parameter(
-     *      name="brand",
+     *      name="name",
      *      in="query",
      *      required=true,
      *      @OA\Schema(
@@ -141,7 +142,7 @@ class CarController extends Controller
      *      )
      *   ),
      *   @OA\Parameter(
-     *      name="model",
+     *      name="email",
      *      in="query",
      *      required=true,
      *      @OA\Schema(
@@ -149,7 +150,7 @@ class CarController extends Controller
      *      )
      *   ),
      *   @OA\Parameter(
-     *      name="reg_num",
+     *      name="password",
      *      in="query",
      *      required=true,
      *      @OA\Schema(
@@ -163,19 +164,18 @@ class CarController extends Controller
      *           mediaType="application/json",
      *      )
      *   )
-     *)
      **/
     /**
      * @param Request $request
      * @return bool
      */
     public function update(Request $request){
-        return $this->serviceCars->update($request);
+        return $this->serviceUser->update($request);
     }
 
     /**
      * @OA\Post(
-     ** path="/api/cars/delete",
+     ** path="/api/users/delete",
      *   tags={"delete"},
      *   summary="delete",
      *   operationId="delete",
@@ -188,6 +188,7 @@ class CarController extends Controller
      *           type="integer"
      *      )
      *   ),
+     *
      *   @OA\Response(
      *      response=200,
      *       description="Success",
@@ -202,6 +203,6 @@ class CarController extends Controller
      * @return bool|null
      */
     public function delete(Request $request){
-        return $this->serviceCars->delete($request);
+        return $this->serviceUser->delete($request);
     }
 }

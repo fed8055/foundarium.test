@@ -4,8 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CarToUser extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    public $fillable = [
+        'user_id',
+        'car_id',
+    ];
 }

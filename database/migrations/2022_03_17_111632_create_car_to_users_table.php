@@ -15,6 +15,9 @@ class CreateCarToUsersTable extends Migration
     {
         Schema::create('car_to_users', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('car_id')->unsigned();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
