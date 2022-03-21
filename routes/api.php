@@ -26,9 +26,9 @@ Route::prefix('users')->group(function (){
     Route::get('/get', [UserController::class, 'getById']);
     Route::get('/getAll', [UserController::class, 'getList']);
     Route::post('/update', [UserController::class, 'update']);
-    Route::post('/delete', [UserController::class, 'delete']);
+    Route::delete('/delete', [UserController::class, 'delete']);
     Route::post('/newCar', [CarToUserController::class, 'create']);
-    Route::post('/deleteCar', [CarToUserController::class, 'delete']);
+    Route::delete('/deleteCar', [CarToUserController::class, 'delete']);
     Route::get('/history', [CarToUserController::class, 'getHistory']);
 });
 
@@ -37,5 +37,5 @@ Route::prefix('cars')->group(function (){
     Route::get('/get', [CarController::class, 'getById']);
     Route::get('/getAll', [CarController::class, 'getList']);
     Route::post('/update', [CarController::class, 'update']);
-    Route::post('/delete', [CarController::class, 'delete']);
+    Route::delete('/delete', [CarController::class, 'delete']);
 });

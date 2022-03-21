@@ -25,10 +25,10 @@ class CarToUserController extends Controller
 
     /**
      * @OA\Post(
-     ** path="/api/users/newCar",
+     * path="/api/users/newCar",
      *   tags={"create"},
      *   summary="create",
-     *   operationId="create",
+     *   operationId="carToUserCreate",
      *
      *  @OA\Parameter(
      *      name="user_id",
@@ -54,8 +54,6 @@ class CarToUserController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @param Request $request
      * @return bool
      */
@@ -64,11 +62,11 @@ class CarToUserController extends Controller
     }
 
     /**
-     * @OA\Post(
-     ** path="/api/users/delete",
+     * @OA\Delete(
+     *   path="/api/users/deleteCar",
      *   tags={"delete"},
      *   summary="delete",
-     *   operationId="delete",
+     *   operationId="carToUserDelete",
      *
      *  @OA\Parameter(
      *      name="id",
@@ -86,8 +84,6 @@ class CarToUserController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @param Request $request
      * @return bool|null
      */
@@ -97,10 +93,10 @@ class CarToUserController extends Controller
 
     /**
      * @OA\Get (
-     ** path="/api/users/history",
+     *   path="/api/users/history",
      *   tags={"history"},
      *   summary="history",
-     *   operationId="history",
+     *   operationId="carToUserHistory",
      *
      *  @OA\Parameter(
      *      name="user_id",
@@ -118,8 +114,6 @@ class CarToUserController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @param Request $request
      * @return \Illuminate\Database\Eloquent\Collection
      */

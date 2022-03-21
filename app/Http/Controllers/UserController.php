@@ -25,10 +25,10 @@ class UserController extends Controller
 
     /**
      * @OA\Post(
-     ** path="/api/users/add",
-     *   tags={"add"},
+     * path="/api/users/add",
+     *   tags={"add", "user"},
      *   summary="add",
-     *   operationId="add",
+     *   operationId="userAdd",
      *
      *  @OA\Parameter(
      *      name="name",
@@ -62,8 +62,6 @@ class UserController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @param Request $request
      * @return bool
      */
@@ -73,10 +71,10 @@ class UserController extends Controller
 
     /**
      * @OA\Get(
-     ** path="/api/users/get",
-     *   tags={"getById"},
+     * path="/api/users/get",
+     *   tags={"getById", "user"},
      *   summary="getById",
-     *   operationId="getById",
+     *   operationId="userGetById",
      *
      *  @OA\Parameter(
      *      name="id",
@@ -94,8 +92,6 @@ class UserController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @param Request $request
      * @return \Illuminate\Database\Eloquent\Model
      */
@@ -105,10 +101,10 @@ class UserController extends Controller
 
     /**
      * @OA\Get(
-     ** path="/api/users/getAll",
-     *   tags={"getList"},
+     * path="/api/users/getAll",
+     *   tags={"getList", "user"},
      *   summary="getList",
-     *   operationId="getList",
+     *   operationId="getUsersList",
      *
      *   @OA\Response(
      *      response=200,
@@ -118,8 +114,6 @@ class UserController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @return \App\Models\User[]|\Illuminate\Database\Eloquent\Collection
      */
     public function getList(){
@@ -128,10 +122,10 @@ class UserController extends Controller
 
     /**
      * @OA\Post(
-     ** path="/api/users/update",
-     *   tags={"update"},
+     * path="/api/users/update",
+     *   tags={"update", "user"},
      *   summary="update",
-     *   operationId="update",
+     *   operationId="userUpdate",
      *
      *  @OA\Parameter(
      *      name="name",
@@ -164,8 +158,7 @@ class UserController extends Controller
      *           mediaType="application/json",
      *      )
      *   )
-     **/
-    /**
+     * )
      * @param Request $request
      * @return bool
      */
@@ -174,13 +167,12 @@ class UserController extends Controller
     }
 
     /**
-     * @OA\Post(
-     ** path="/api/users/delete",
-     *   tags={"delete"},
+     * @OA\Delete(
+     *   path="/api/users/delete",
+     *   tags={"delete", "user"},
      *   summary="delete",
-     *   operationId="delete",
-     *
-     *  @OA\Parameter(
+     *   operationId="userDelete",
+     *   @OA\Parameter(
      *      name="id",
      *      in="query",
      *      required=true,
@@ -188,7 +180,6 @@ class UserController extends Controller
      *           type="integer"
      *      )
      *   ),
-     *
      *   @OA\Response(
      *      response=200,
      *       description="Success",
@@ -197,8 +188,6 @@ class UserController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @param Request $request
      * @return bool|null
      */

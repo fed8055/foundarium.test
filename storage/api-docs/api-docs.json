@@ -1,0 +1,446 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API",
+        "description": "API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/cars/add": {
+            "post": {
+                "tags": [
+                    "add"
+                ],
+                "summary": "add",
+                "operationId": "carAdd",
+                "parameters": [
+                    {
+                        "name": "brand",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "model",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "reg_num",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/cars/get": {
+            "get": {
+                "tags": [
+                    "getById"
+                ],
+                "summary": "getById",
+                "operationId": "carGetById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/cars/getAll": {
+            "get": {
+                "tags": [
+                    "getList"
+                ],
+                "summary": "getList",
+                "operationId": "getCarsList",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/cars/update": {
+            "post": {
+                "tags": [
+                    "update"
+                ],
+                "summary": "update",
+                "operationId": "carUpdate",
+                "parameters": [
+                    {
+                        "name": "brand",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "model",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "reg_num",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/cars/delete": {
+            "post": {
+                "tags": [
+                    "delete"
+                ],
+                "summary": "delete",
+                "operationId": "carDelete",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/newCar": {
+            "post": {
+                "tags": [
+                    "create"
+                ],
+                "summary": "create",
+                "operationId": "carToUserCreate",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "car_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/deleteCar": {
+            "post": {
+                "tags": [
+                    "delete"
+                ],
+                "summary": "delete",
+                "operationId": "carToUserDelete",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/history": {
+            "get": {
+                "tags": [
+                    "history"
+                ],
+                "summary": "history",
+                "operationId": "carToUserHistory",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/add": {
+            "post": {
+                "tags": [
+                    "add",
+                    "user"
+                ],
+                "summary": "add",
+                "operationId": "userAdd",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/get": {
+            "get": {
+                "tags": [
+                    "getById",
+                    "user"
+                ],
+                "summary": "getById",
+                "operationId": "userGetById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/getAll": {
+            "get": {
+                "tags": [
+                    "getList",
+                    "user"
+                ],
+                "summary": "getList",
+                "operationId": "getUsersList",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/update": {
+            "post": {
+                "tags": [
+                    "update",
+                    "user"
+                ],
+                "summary": "update",
+                "operationId": "userUpdate",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/delete": {
+            "post": {
+                "tags": [
+                    "delete",
+                    "user"
+                ],
+                "summary": "delete",
+                "operationId": "userDelete",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CarController": {
+                "title": "CarController",
+                "description": "CarController",
+                "xml": {
+                    "name": "CarController"
+                }
+            },
+            "CarToUserController": {
+                "title": "CarToUserController",
+                "description": "CarToUserController",
+                "xml": {
+                    "name": "CarToUserController"
+                }
+            },
+            "UserController": {
+                "title": "UserController",
+                "description": "UserController",
+                "xml": {
+                    "name": "UserController"
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

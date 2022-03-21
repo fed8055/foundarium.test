@@ -24,10 +24,10 @@ class CarController extends Controller
 
     /**
      * @OA\Post(
-     ** path="/api/cars/add",
+     * path="/api/cars/add",
      *   tags={"add"},
      *   summary="add",
-     *   operationId="add",
+     *   operationId="carAdd",
      *
      *  @OA\Parameter(
      *      name="brand",
@@ -61,8 +61,6 @@ class CarController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @param Request $request
      * @return bool
      */
@@ -72,10 +70,10 @@ class CarController extends Controller
 
     /**
      * @OA\Get(
-     ** path="/api/cars/get",
+     * path="/api/cars/get",
      *   tags={"getById"},
      *   summary="getById",
-     *   operationId="getById",
+     *   operationId="carGetById",
      *
      *  @OA\Parameter(
      *      name="id",
@@ -93,8 +91,6 @@ class CarController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @param Request $request
      * @return \Illuminate\Database\Eloquent\Model
      */
@@ -104,10 +100,10 @@ class CarController extends Controller
 
     /**
      * @OA\Get(
-     ** path="/api/cars/getAll",
+     * path="/api/cars/getAll",
      *   tags={"getList"},
      *   summary="getList",
-     *   operationId="getList",
+     *   operationId="getCarsList",
      *
      *   @OA\Response(
      *      response=200,
@@ -117,8 +113,6 @@ class CarController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @return \App\Models\Car[]|\Illuminate\Database\Eloquent\Collection
      */
     public function getList(){
@@ -127,10 +121,10 @@ class CarController extends Controller
 
     /**
      * @OA\Post(
-     ** path="/api/cars/update",
+     * path="/api/cars/update",
      *   tags={"update"},
      *   summary="update",
-     *   operationId="update",
+     *   operationId="carUpdate",
      *
      *  @OA\Parameter(
      *      name="brand",
@@ -164,8 +158,6 @@ class CarController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @param Request $request
      * @return bool
      */
@@ -174,11 +166,11 @@ class CarController extends Controller
     }
 
     /**
-     * @OA\Post(
-     ** path="/api/cars/delete",
+     * @OA\Delete(
+     * path="/api/cars/delete",
      *   tags={"delete"},
      *   summary="delete",
-     *   operationId="delete",
+     *   operationId="carDelete",
      *
      *  @OA\Parameter(
      *      name="id",
@@ -196,8 +188,6 @@ class CarController extends Controller
      *      )
      *   )
      *)
-     **/
-    /**
      * @param Request $request
      * @return bool|null
      */
